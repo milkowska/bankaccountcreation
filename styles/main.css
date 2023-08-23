@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.logo {
+    text-align: center;
+    margin-top: 30vh; 
+
+}
+
+.logo img {
+    display: block;
+    width: 30%; 
+    margin: 3rem auto;
+    height: auto; 
+    
+}
+
+.another-logo img {
+    display: block;
+    width: 15%; /* Adjust the logo width as needed */
+    height: auto;
+    margin-left: auto;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 4rem 4rem; /* Adjust the top and bottom padding as needed */
+    flex-wrap: wrap;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3rem;
+    flex: 2;
+}
+
+.button {
+    text-align: center;
+    margin: 2rem;
+    color:white;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.card {
+    flex: 1; /* Equal width for each card */
+    max-width: calc(33.33% - 1rem); /* Maximum width for each card */
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn {
+    cursor: pointer;
+    width: 25%;
+    padding: 1em;
+    min-width: fit-content; /* minimum width based on content */
+    margin: 2rem;
+    background-color: #db0011;
+    color: white;
+    
+}
+
+  .submit-btn:hover {
+    background-color:rgb(177, 5, 5);
+}
+
+
+#chooseFileButton {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff3627;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: auto;
+}
+
+#uploadInstructions {
+    font-size: 18px;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+#nextButton {
+    padding: 12px 30px;    
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#nextButton:enabled {
+    background-color: #ff3627; 
+}
+
+#nextButton:disabled {
+    background-color: #ccc; 
+}
+
+.update {
+    text-align: center;
+    margin-bottom: 30px;
+    height: 100%;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}

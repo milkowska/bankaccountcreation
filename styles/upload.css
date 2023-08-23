@@ -1,0 +1,55 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.another-logo img {
+    display: block;
+    width: 15%; 
+    height: auto;
+    margin-left: auto;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 4rem 4rem;
+    flex-wrap: wrap;
+}
+
+main {
+    text-align: center;
+}
+
+#chooseFileButton {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff3627;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+#uploadInstructions {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#nextButton {
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+}
