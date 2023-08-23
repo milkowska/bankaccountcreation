@@ -15,28 +15,34 @@ body {
     
 }
 
-.another-logo img {
-    display: block;
-    width: 15%; /* Adjust the logo width as needed */
-    height: auto;
-    margin-left: auto;
-    flex: 1;
-}
-
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    padding: 4rem 4rem; /* Adjust the top and bottom padding as needed */
+    padding: 1rem 3rem; 
     flex-wrap: wrap;
 }
 
 .header h1 {
-    margin: 0;
+    margin-top: 10px;
     font-size: 3rem;
     flex: 2;
 }
+
+.another-logo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.another-logo img {
+    display: block;
+    width: 100%; 
+    height: auto;
+    margin-left: auto;
+}
+
 
 .button {
     text-align: center;
@@ -63,7 +69,7 @@ body {
     cursor: pointer;
     width: 25%;
     padding: 1em;
-    min-width: fit-content; /* minimum width based on content */
+    min-width: fit-content; 
     margin: 2rem;
     background-color: #db0011;
     color: white;
@@ -118,3 +124,35 @@ body {
     justify-content: center;
     align-items: center;
 }
+/*  Login page fields and button
+*
+*/
+.login_container {
+    margin: 30px auto;
+    width: 400px;
+    padding: 30px;
+    border: 2px solid #ff3627;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; 
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff3627;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    box-sizing: border-box; 
+  }
