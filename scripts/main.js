@@ -10,5 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
     previous_page.addEventListener('click', () => {
         window.location.href = 'user_details.html';
     });
-    
+
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const go_main = document.getElementById("go_main");
+    
+    go_main.addEventListener('click', () => {
+        window.location.href = 'main_page.html';
+    });
+});
+

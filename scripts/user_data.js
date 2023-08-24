@@ -62,7 +62,15 @@ document.addEventListener('DOMContentLoaded', function () {
     previous_page.addEventListener('click', () => {
         window.history.back(); 
     });
-    
 
-    
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const next_button = document.getElementById('next_button');
+
+    next_button.addEventListener('click', () => {
+        window.location.href = 'successful_creation.html';
+    });
+
 });
