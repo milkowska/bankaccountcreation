@@ -4,20 +4,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const previous_page = document.getElementById('previous_page');
     
     next_button.addEventListener('click', () => {
-        window.location.href = 'page_two.html';
+        window.location.href = 'page-two.html';
     });
 
     previous_page.addEventListener('click', () => {
-        window.location.href = 'user_details.html';
+        window.location.href = 'user-details.html';
     });
 
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const go_main = document.getElementById("go_main");
+    const goMain = document.getElementById("goMain");
     
-    go_main.addEventListener('click', () => {
-        window.location.href = 'main_page.html';
+    goMain.addEventListener('click', () => {
+        window.location.href = 'main-page.html';
     });
 });
 

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             localStorage.setItem('userData', JSON.stringify(userData));
             
-            window.location.href = 'upload_document.html';
+            window.location.href = 'upload-document.html';
         } else {
             alert('Please fill out all required fields to proceed.');
         }
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const next_button = document.getElementById('next_button');
 
     next_button.addEventListener('click', () => {
-        window.location.href = 'successful_creation.html';
+        window.location.href = 'successful-creation.html';
     });
 
 });
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const go_main = document.getElementById("go_main");
     
     go_main.addEventListener('click', () => {
-        window.location.href = 'main_page.html';
+        window.location.href = 'main-page.html';
     });
 });
 
