@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             localStorage.setItem('userData', JSON.stringify(userData));
             
-            window.location.href = 'final_check.html';
+            window.location.href = 'upload_document.html';
         } else {
             alert('Please fill out all required fields to proceed.');
         }
@@ -74,3 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const go_main = document.getElementById("go_main");
+    
+    go_main.addEventListener('click', () => {
+        window.location.href = 'main_page.html';
+    });
+});
+
