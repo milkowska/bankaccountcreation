@@ -81,16 +81,16 @@ document.addEventListener('DOMContentLoaded', function () {
     displayPostcode.textContent = storedUserData.postcode || 'N/A';
 })
 */
+
 document.addEventListener('DOMContentLoaded', function () {
 
-    const previous_page = document.getElementById('previous_page');
+    const change_details = document.getElementById('change_details');
 
-    previous_page.addEventListener('click', () => {
-        window.history.back();
+    change_details.addEventListener('click', () => {
+        window.location.href = 'user-details.html'
     });
 
 });
-
 document.addEventListener('DOMContentLoaded', function () {
 
     const next_button = document.getElementById('next_button');

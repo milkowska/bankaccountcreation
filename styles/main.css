@@ -1,16 +1,12 @@
-body {
-    font-family: Arial, sans-serif;
-}
 .logo {
     text-align: center;
-    margin-top: 30vh; 
-
+    margin-top: 15vh; 
 }
 
 .logo img {
     display: block;
-    width: 30%; 
-    margin: 3rem auto;
+    width: 20%; 
+    margin: 2rem auto;
     height: auto; 
     
 }
@@ -21,6 +17,7 @@ body {
     align-items: center;
     background-color: #ffffff;
     padding: 0rem 2rem; 
+    padding-bottom: 0.5rem;
     flex-wrap: wrap;
 }
 
@@ -34,6 +31,7 @@ body {
     display: flex;
     align-items: center;
     flex: 1;
+    max-width: 20%;
 }
 
 .another-logo img {
@@ -42,7 +40,6 @@ body {
     height: auto;
     margin-left: auto;
 }
-
 
 .button {
     text-align: center;
@@ -53,7 +50,7 @@ body {
 .card-container {
     display: flex;
     justify-content: space-between;
-    margin: 2rem;
+    margin: 0rem;
 }
 
 .card {
@@ -62,7 +59,6 @@ body {
     padding: 1rem;
     text-align: center;
     background-color: #fff;
-    transition: background-color 0.3s ease;
 }
 
 .submit-btn {
@@ -73,7 +69,6 @@ body {
     margin: 2rem;
     background-color: #db0011;
     color: white;
-    
 }
 
   .submit-btn:hover {
@@ -158,3 +153,78 @@ body {
     cursor: pointer;
     box-sizing: border-box; 
   }
+
+  * {box-sizing: border-box;}
+
+/* Button used to open the chat form */
+.open-button {
+  padding:10px 40px;
+  background-color: red;
+  color: white;
+  font-size:14px;
+  max-width: 250px;
+  border-radius:20px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 25px;
+  right: 30px;  
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 40px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 360px;
+  padding: 12px;
+  border-radius:20px;
+  text-align: center;
+  background-color: rgb(239, 155, 155);
+  font-size: 14px;
+  color:black;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 20px 0 20px 0;
+  border: none;
+  border-radius:20px;
+  background: #ddd;
+  resize: none;
+  min-height: 200px;
+  color:#777; 
+}
+
+.form-container textarea:focus {
+  background-color: #e7c8c8;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius:20px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+.form-container .cancel {
+  background-color: black;
+}
+
+.form-container .btn:hover, .open-button:hover {
+opacity: 0.8;
+}

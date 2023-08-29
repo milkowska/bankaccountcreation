@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
     <title>Final check</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+        }
+
+        .submit-btn {
+            flex: 1;
+            width: auto;            
+        }
+    </style>
 </head>
 
 <body>
@@ -24,8 +38,9 @@
         <p>Date of Birth: <span id="displayDOB"></span></p>
         <p>Postcode: <span id="displayPostcode"></span></p>
 
-        <button class="red-button" id="next_button">Yes, I confirm that the information is correct</button>
-        <button class="red-button" id="previous_page">No, I need to double check</button>
+        <button class="submit-btn" id="next_button">Yes, I confirm that the information is correct</button>
+
+        <button class="submit-btn" id="change_details">No, I need to double check</button>
     </main>
     <script src="scripts/userData.js"></script>
 </body>
