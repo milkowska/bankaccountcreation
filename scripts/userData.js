@@ -118,3 +118,46 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function loadAccounts(){
+    data = [
+        {
+          "accountNumber": "80382877",
+          "accountType": "Savings",
+          "balance": 0,
+          "cardNumber": "8114384878344086",
+          "customerID": "1",
+          "overdraft": null,
+          "sortCode": "405770"
+        },
+        {
+          "accountNumber": "44277659",
+          "accountType": "Basic",
+          "balance": 0,
+          "cardNumber": "1783280815942238",
+          "customerID": "1",
+          "overdraft": 0.399,
+          "sortCode": "407795"
+        }
+    ]
+    var mainDiv = document.getElementById('openedAccounts');
+    for (let i = 0; i < data.length; i++){
+        var acc = document.createElement('div');
+        acc.className = 'acc';
+
+        var detail1 = document.createElement('div');
+        var detail2 = document.createElement('div');
+
+        detail1.style.display = "inline";
+        detail1.style.float = "left"
+        detail2.style.display = "inline";
+        detail2.style.float = "right"
+
+        var lastfour = data[i].cardNumber.substr(data[i].cardNumber.length - 5);
+        detail1.innerHTML = data[i].accountType;
+        detail2.innerHTML += "Account ending in: "+ lastfour;
+
+        acc.appendChild(detail1)
+        acc.appendChild(detail2)
+        mainDiv.appendChild(acc);
+    }
+}
