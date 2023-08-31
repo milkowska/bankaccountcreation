@@ -84,13 +84,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const change_details = document.getElementById('change_details');
+    const submit_button = document.getElementById('submit_button');
 
-    change_details.addEventListener('click', () => {
-        window.location.href = 'user-details.html'
+    submit_button.addEventListener('click', () => {
+        window.location.href = 'successful-creation.html';
     });
 
 });
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const next_button = document.getElementById('next_button');
@@ -100,7 +101,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+document.addEventListener('DOMContentLoaded', function () {
 
+    const change_details = document.getElementById('change_details');
+
+    change_details.addEventListener('click', () => {
+        window.location.href = 'user-details.html'
+    });
+
+});
 document.addEventListener('DOMContentLoaded', function () {
     const go_main = document.getElementById("goMain");
 
