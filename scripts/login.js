@@ -29,3 +29,22 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+function signin(){
+  var e = document.getElementById("emailSignin").value;
+  var p = document.getElementById("passwordSignin").value;
+  firebase.auth().signInWithEmailAndPassword(e, p)
+  .then((userCredential) => {
+    // Signed in
+    currentUser = userCredential.user;
+    setTimeout(function(){
+      window.location.href = 'main-page.html';
+  }, 1800);
+    // ...
+  })
+  .catch((error) => {
+    window.alert("Account not found");
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+}

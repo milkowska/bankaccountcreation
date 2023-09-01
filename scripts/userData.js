@@ -77,45 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const submit_button = document.getElementById('submit_button');
-
-    submit_button.addEventListener('click', () => {
-        window.location.href = 'successful-creation.html';
-    });
-
-});
-<<<<<<< HEAD
-// Go to page after confirming customer details
-=======
-
->>>>>>> d92a5a8a833a2f66aa76011f2346f3ae376d2b92
-document.addEventListener('DOMContentLoaded', function () {
-
-    const next_button = document.getElementById('next_button');
-
-    next_button.addEventListener('click', () => {
-        console.log(sessionStorage.getItem("type"));
-        // var data = {
-        //     "customerID": currentUser.uid,
-        //     "accountType": sessionStorage.getItem("type")
-        // }
-
-        // var jsonString = JSON.stringify(data);
-        // var request = new XMLHttpRequest();
-        // request.open("POST", "http://127.0.0.1:5000/newAccount", true);
-        // request.setRequestHeader('Content-Type', 'application/json');
-        // request.send(jsonString);
-
-        // setTimeout(function(){
-        //     window.location.href = 'successful-creation.html';
-        // }, 1000);
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-
-<<<<<<< HEAD
-// Go to the main page (view all opened accounts)
-=======
     const change_details = document.getElementById('change_details');
 
     change_details.addEventListener('click', () => {
@@ -123,7 +84,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
->>>>>>> d92a5a8a833a2f66aa76011f2346f3ae376d2b92
+// Go to page after confirming customer details
+document.addEventListener('DOMContentLoaded', function () {
+
+    const next_button = document.getElementById('next_button');
+
+    next_button.addEventListener('click', () => {
+        console.log(sessionStorage.getItem("type"));
+        var data = {
+            "customerID": currentUser.uid,
+            "accountType": sessionStorage.getItem("type")
+        }
+
+        var jsonString = JSON.stringify(data);
+        var request = new XMLHttpRequest();
+        request.open("POST", "http://127.0.0.1:5000/newAccount", true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(jsonString);
+
+        setTimeout(function(){
+            window.location.href = 'successful-creation.html';
+        }, 1000);
+    });
+});
+
+// Go to the main page (view all opened accounts)
 document.addEventListener('DOMContentLoaded', function () {
     const go_main = document.getElementById("goMain");
 
@@ -137,8 +122,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const goLogin = document.getElementById("logoutButton")
 
     goLogin.addEventListener('click', () => {
-        window.location.href = 'login.html';
+        firebase.auth().signOut().then(() => {
+            window.location.href = 'login.html';
+          }).catch((error) => {
+            // An error happened.
+          });
+          
     });
+
 });
 
 function loadCustomerDetails(){
