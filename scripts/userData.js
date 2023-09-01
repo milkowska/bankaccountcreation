@@ -77,14 +77,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const change_details = document.getElementById('change_details');
+    const submit_button = document.getElementById('submit_button');
 
-    change_details.addEventListener('click', () => {
-        window.location.href = 'user-details.html'
+    submit_button.addEventListener('click', () => {
+        window.location.href = 'successful-creation.html';
     });
 
 });
+<<<<<<< HEAD
 // Go to page after confirming customer details
+=======
+
+>>>>>>> d92a5a8a833a2f66aa76011f2346f3ae376d2b92
 document.addEventListener('DOMContentLoaded', function () {
 
     const next_button = document.getElementById('next_button');
@@ -107,8 +111,19 @@ document.addEventListener('DOMContentLoaded', function () {
         // }, 1000);
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
 
+<<<<<<< HEAD
 // Go to the main page (view all opened accounts)
+=======
+    const change_details = document.getElementById('change_details');
+
+    change_details.addEventListener('click', () => {
+        window.location.href = 'user-details.html'
+    });
+
+});
+>>>>>>> d92a5a8a833a2f66aa76011f2346f3ae376d2b92
 document.addEventListener('DOMContentLoaded', function () {
     const go_main = document.getElementById("goMain");
 
