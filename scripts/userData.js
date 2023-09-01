@@ -1,4 +1,5 @@
-/*
+
+// get details of customer and create new customer using the api
 document.addEventListener('DOMContentLoaded', function () {
     const submit_button = document.getElementById('submit_button');
 
@@ -18,49 +19,41 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (allFieldsFilled) {
-            const userData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                phoneNumber: document.getElementById('phoneNumber').value,
-                address: document.getElementById('address').value,
-                DOB: document.getElementById('DOB').value,
-                postcode: document.getElementById('postcode').value,
-            };
+            var fname = document.getElementById('fname').value
+            var lname = document.getElementById('lname').value
+            var dob = document.getElementById('dob').value
+            var address = document.getElementById('address').value
+            var postcode = document.getElementById('postcode').value
+            var phone = document.getElementById('phone').value
 
-            localStorage.setItem('userData', JSON.stringify(userData));
+            var data = {
+                "customerID": currentUser.uid,
+                "fname": fname,
+                "lname": lname,
+                "dob": dob.toString(),
+                "address": address,
+                "postcode": postcode,
+                "phone": phone
+            }
 
-            window.location.href = 'upload-document.html';
+            
+            var jsonString = JSON.stringify(data);
+            var request = new XMLHttpRequest();
+            request.open("POST", "http://127.0.0.1:5000/newCustomer", true);
+            request.setRequestHeader('Content-Type', 'application/json');
+            request.send(jsonString);
+
+            setTimeout(function(){
+                window.location.href = 'upload-document.html';
+            }, 1000);
+
+            
         } else {
             alert('Please fill out all required fields to proceed.');
         }
     });
 });
-*/
 
-function createCustomer() {
-    var fname = document.getElementById('fname').value
-    var lname = document.getElementById('lname').value
-    var dob = document.getElementById('dob').value
-    var address = document.getElementById('address').value
-    var postcode = document.getElementById('postcode').value
-    var phone = document.getElementById('phone').value
-
-    var data = {
-        "fname": fname,
-        "lname": lname,
-        "dob": dob.toString(),
-        "address": address,
-        "postcode": postcode,
-        "phone": phone
-    }
-    var jsonString = JSON.stringify(data);
-    var request = new XMLHttpRequest();
-    request.open("POST", "http://127.0.0.1:5000/newCustomer", true);
-    request.setRequestHeader('Content-Type', 'application/json');
-    request.send(jsonString);
-
-    console.log(data)
-}
 /*
 document.addEventListener('DOMContentLoaded', function () {
     // Retrieve data from localStorage
@@ -91,16 +84,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+// Go to page after confirming customer details
 document.addEventListener('DOMContentLoaded', function () {
 
     const next_button = document.getElementById('next_button');
 
     next_button.addEventListener('click', () => {
-        window.location.href = 'successful-creation.html';
-    });
+        console.log(sessionStorage.getItem("type"));
+        // var data = {
+        //     "customerID": currentUser.uid,
+        //     "accountType": sessionStorage.getItem("type")
+        // }
 
+        // var jsonString = JSON.stringify(data);
+        // var request = new XMLHttpRequest();
+        // request.open("POST", "http://127.0.0.1:5000/newAccount", true);
+        // request.setRequestHeader('Content-Type', 'application/json');
+        // request.send(jsonString);
+
+        // setTimeout(function(){
+        //     window.location.href = 'successful-creation.html';
+        // }, 1000);
+    });
 });
 
+// Go to the main page (view all opened accounts)
 document.addEventListener('DOMContentLoaded', function () {
     const go_main = document.getElementById("goMain");
 
@@ -118,46 +126,75 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function loadAccounts(){
-    data = [
-        {
-          "accountNumber": "80382877",
-          "accountType": "Savings",
-          "balance": 0,
-          "cardNumber": "8114384878344086",
-          "customerID": "1",
-          "overdraft": null,
-          "sortCode": "405770"
-        },
-        {
-          "accountNumber": "44277659",
-          "accountType": "Basic",
-          "balance": 0,
-          "cardNumber": "1783280815942238",
-          "customerID": "1",
-          "overdraft": 0.399,
-          "sortCode": "407795"
-        }
-    ]
-    var mainDiv = document.getElementById('openedAccounts');
-    for (let i = 0; i < data.length; i++){
-        var acc = document.createElement('div');
-        acc.className = 'acc';
-
-        var detail1 = document.createElement('div');
-        var detail2 = document.createElement('div');
-
-        detail1.style.display = "inline";
-        detail1.style.float = "left"
-        detail2.style.display = "inline";
-        detail2.style.float = "right"
-
-        var lastfour = data[i].cardNumber.substr(data[i].cardNumber.length - 5);
-        detail1.innerHTML = data[i].accountType;
-        detail2.innerHTML += "Account ending in: "+ lastfour;
-
-        acc.appendChild(detail1)
-        acc.appendChild(detail2)
-        mainDiv.appendChild(acc);
+function loadCustomerDetails(){
+    currentacc();
+    setTimeout(function(){
+        var url = "http://127.0.0.1:5000/getCustomerDetails/" + currentUser.uid;
+        fetch(url)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(jsonResponse) {
+            console.log(jsonResponse)
+            var details = document.getElementById("details")
+            details.innerHTML += "First name: " + jsonResponse.fname + "<br>";
+            details.innerHTML += "Last name: " + jsonResponse.lname + "<br>";
+            details.innerHTML += "Date of birth: " + jsonResponse.dob + "<br>";
+            details.innerHTML += "Phone: " + jsonResponse.phone + "<br>";
+            details.innerHTML += "Postcode: " + jsonResponse.postcode + "<br>";
+            details.innerHTML += "Address: " + jsonResponse.address + "<br>";
+        });
+    }, 2000);
+    
+}
+function getAccountType(x){
+    console.log("pressed");
+    if (x == 1){
+        sessionStorage.setItem("type", "Basic");
+    } else if (x == 2){
+        sessionStorage.setItem("type", "Savings");
+    } else if (x ==3){
+        sessionStorage.setItem("type", "Business");
     }
+
+    window.location.href = "user-details.html"
+    
+}
+function loadAccounts(){
+    var url = "http://127.0.0.1:5000/getOpenedAccounts/" + currentUser.uid;
+    fetch(url)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data)
+        var mainDiv = document.getElementById('openedAccounts');
+        for (let i = 0; i < data.length; i++){
+            var acc = document.createElement('div');
+            acc.className = 'acc';
+
+            var detail1 = document.createElement('div');
+            var detail2 = document.createElement('div');
+
+            detail1.style.display = "inline";
+            detail1.style.float = "left"
+            detail2.style.display = "inline";
+            detail2.style.float = "right"
+
+            var lastfour = data[i].cardNumber.substr(data[i].cardNumber.length - 5);
+            detail1.innerHTML = data[i].accountType;
+            detail2.innerHTML += "Account ending in: "+ lastfour;
+
+            acc.appendChild(detail1)
+            acc.appendChild(detail2)
+            mainDiv.appendChild(acc);
+        }
+    });
+    
+}
+function currentAccAndLoad(){
+    currentacc();
+    setTimeout(function(){
+        loadAccounts();
+    }, 1800);
 }

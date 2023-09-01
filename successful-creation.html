@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
-<body>
+<body onload="currentacc()">
     <header class="header">
         <h1>THANK YOU FOR APPLYING</h1>
         <section class="another-logo">
@@ -18,13 +18,15 @@
         <main>
             <p>Congratulations <span id="displayFirstName"></span>, welcome to HSBC!</p>
             <br>
-            <p>Your acc_type account ending in last_4_digits is ready for you now.</p>
+            <p> Click the start banking button to view all your accounts
             <br>
             <section class="button">
                 <input class="submit-btn" type="submit" value="Start Banking Now" id="goMain">
             </section>
         </main>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0/firebase.js"></script>
+    <script src="scripts/firebaseAuth.js"></script>
     <script src="scripts/userData.js"></script>
 </body>
 

@@ -59,7 +59,7 @@
     <title>Enter your details</title>
 </head>
 
-<body>
+<body onload="currentacc()">
     <header class="header">
         <h1>A FEW DETAILS ABOUT YOU...</h1>
         <section class="another-logo">
@@ -95,8 +95,10 @@
 
     </main>
     <div class="button-container">
-        <button id="submit_button" type="button" onclick="createCustomer();return false">Submit</button>
+        <button id="submit_button" type="button">Submit</button>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0/firebase.js"></script>
+    <script src="scripts/firebaseAuth.js"></script>
     <script src="scripts/userData.js"></script>
 </body>
 

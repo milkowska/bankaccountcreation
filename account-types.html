@@ -8,7 +8,7 @@
     <title>Choose Your Account</title>
 </head>
 
-<body>
+<body onload="currentacc()">
     <header class="header">
         <h1>CHOOSE YOUR ACCOUNT</h1>
         <section class="another-logo">
@@ -23,6 +23,7 @@
                 <a href="user-details.html">
                     <img src="images/basic_debit.jpeg" alt="Basic Debit Account">
                 </a>
+                <button onclick="getAccountType(1)">Choose this card</button>
                 <p>-For those who want everyday banking made easy.</p>
                 <p>-Manage money within our App.</p>
                 <p>-Know exactly where you stand.</p>
@@ -37,6 +38,7 @@
                 <a href="user-details.html">
                     <img src="images/advance_business.jpeg" alt="Advance Business Account">
                 </a>
+                <button onclick="getAccountType(2)">Choose this card</button>
                 <p>-12 months free banking.</p>
                 <p>-Access funding solutions up to £100k.</p>
                 <p>-Access to business specialist advice.</p>
@@ -51,6 +53,7 @@
                 <a id="get_details" href="savings-page.html">
                     <img src="images/saving.jpeg" alt="Saving Account">
                 </a>
+                <button onclick ="getAccountType(3)">Choose this card</button>
                 <p>-Bonus rate up to £50,000 4% AER.</p>
                 <p>-Bonus rate over £50,000: 2.30% AER / 1.98% Gross.</p>
                 <p>-Standard rate 2.00% AER / 1.98% Gross.</p>
@@ -62,6 +65,9 @@
         </div>
     </main>
 
+    <script src="https://www.gstatic.com/firebasejs/8.0/firebase.js"></script>
+    <script src="scripts/firebaseAuth.js"></script>
+    <script src="scripts/userData.js"></script>
 </body>
 
 </html>

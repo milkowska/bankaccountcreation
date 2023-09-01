@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/start_up.css">
 </head>
 
-<body onload="loadAccounts()">
+<body onload="currentAccAndLoad()">
     <header class="header">
         <h1>Welcome Back, <span id="displayFirstName"></span> <span id="displayLastName"></span></h1>
         <section class="another-logo">
@@ -23,6 +23,8 @@
         <button id="logoutButton" onclick="logout()">Log Out</button>
         <div id = "openedAccounts">
     </main>
+    <script src="https://www.gstatic.com/firebasejs/8.0/firebase.js"></script>
+    <script src="scripts/firebaseAuth.js"></script>
     <script src="scripts/userData.js"></script>
 </body>
 

@@ -9,8 +9,9 @@ loginForm.addEventListener('submit', function (event) {
   event.preventDefault(); // Prevent default form submission
 
   if (!submitButton.hasAttribute('disabled')) {
-
-      window.location.href = 'index.html';
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      createAccount(email,password);
   }
 });
 

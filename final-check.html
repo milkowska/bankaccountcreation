@@ -22,7 +22,7 @@
     </style>
 </head>
 
-<body>
+<body onload="loadCustomerDetails()">
     <header class="header">
         <h1>FINAL CHECK</h1>
         <section class="another-logo">
@@ -31,17 +31,15 @@
     </header>
     <main>
         <p>Can you confirm the information you have put is correct?</p>
-        <p>First Name: <span id="displayFirstName"></span></p>
-        <p>Last Name: <span id="displayLastName"></span></p>
-        <p>Phone Number: <span id="displayPhoneNumber"></span></p>
-        <p>Address: <span id="displayAddress"></span></p>
-        <p>Date of Birth: <span id="displayDOB"></span></p>
-        <p>Postcode: <span id="displayPostcode"></span></p>
+        <div id="details">
+        </div>
 
         <button class="submit-btn" id="next_button">Yes, I confirm that the information is correct</button>
 
         <button class="submit-btn" id="change_details">No, I need to double check</button>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/8.0/firebase.js"></script>
+    <script src="scripts/firebaseAuth.js"></script>
     <script src="scripts/userData.js"></script>
 </body>
 
